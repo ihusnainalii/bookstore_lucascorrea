@@ -23,6 +23,7 @@
 		A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFA24DCEB5E007E0DEF /* BookCollectionViewCell.swift */; };
 		A0181DFD24DCEBEA007E0DEF /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */; };
 		A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */; };
+		A0D1260124DD688C00BE9BB3 /* BookStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A0181DFA24DCEB5E007E0DEF /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
+		A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 		A0181DC924DCDC42007E0DEF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */,
 				A0181DD324DCDC43007E0DEF /* AppDelegate.swift in Sources */,
 				A0181DFD24DCEBEA007E0DEF /* UICollectionView+Ext.swift in Sources */,
+				A0D1260124DD688C00BE9BB3 /* BookStoreViewModel.swift in Sources */,
 				A0181DF324DCE388007E0DEF /* Storyboard+Ext.swift in Sources */,
 				A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */,
 				A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */,

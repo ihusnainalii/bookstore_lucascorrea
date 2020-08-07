@@ -33,7 +33,10 @@ class BookStoreCoordinator: BaseCoordinator {
     /// Start
     override func start() {
         let bookStoreCollectionViewController = UIStoryboard.instantiate(identifier: BookStoreCollectionViewController.className) { coder -> BookStoreCollectionViewController? in
-            return BookStoreCollectionViewController(coder: coder)
+            let bookStoreViewModel = BookStoreViewModel()
+            
+            // Dependency Injection
+            return BookStoreCollectionViewController(coder: coder, viewModel: bookStoreViewModel)
         }
         
         bookStoreCollectionViewController.navigationItem.title = "BookStore"
