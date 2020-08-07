@@ -20,6 +20,9 @@
 		A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DEF24DCE309007E0DEF /* BaseCoordinator.swift */; };
 		A0181DF324DCE388007E0DEF /* Storyboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF224DCE388007E0DEF /* Storyboard+Ext.swift */; };
 		A0181DF524DCE41D007E0DEF /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */; };
+		A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFA24DCEB5E007E0DEF /* BookCollectionViewCell.swift */; };
+		A0181DFD24DCEBEA007E0DEF /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */; };
+		A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		A0181DEF24DCE309007E0DEF /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		A0181DF224DCE388007E0DEF /* Storyboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Ext.swift"; sourceTree = "<group>"; };
 		A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
+		A0181DFA24DCEB5E007E0DEF /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,8 @@
 			children = (
 				A0181DF224DCE388007E0DEF /* Storyboard+Ext.swift */,
 				A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */,
+				A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */,
+				A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 		A0181DCA24DCDC42007E0DEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0181DFA24DCEB5E007E0DEF /* BookCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,8 +397,11 @@
 			files = (
 				A0181DEA24DCE294007E0DEF /* BookStoreCoordinator.swift in Sources */,
 				A0181DD624DCDED3007E0DEF /* BookStoreCollectionViewController.swift in Sources */,
+				A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */,
 				A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */,
+				A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */,
 				A0181DD324DCDC43007E0DEF /* AppDelegate.swift in Sources */,
+				A0181DFD24DCEBEA007E0DEF /* UICollectionView+Ext.swift in Sources */,
 				A0181DF324DCE388007E0DEF /* Storyboard+Ext.swift in Sources */,
 				A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */,
 				A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */,

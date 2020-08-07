@@ -8,39 +8,72 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "BookCollectionViewCell"
 
 class BookStoreCollectionViewController: UICollectionViewController {
 
+    //
+    // MARK: - Oulets
+    
+    //
+    // MARK: - Properties
+    
+    
+    //
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.collectionViewLayout = createCompositionalLayout()
+    }
+    
+    // MARK: - Private methods
+    
+    private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+      let layout = UICollectionViewCompositionalLayout { _, layoutEnvironment in
+        let isWideView = layoutEnvironment.container.effectiveContentSize.width > 500
+        return self.bookLayoutSection(isWide: isWideView)
+      }
+      return layout
+    }
+    
+    private func bookLayoutSection(isWide: Bool) -> NSCollectionLayoutSection {
+      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+      let item = NSCollectionLayoutItem(layoutSize: itemSize)
+      item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+
+      let groupHeight = NSCollectionLayoutDimension.fractionalWidth(isWide ? 0.25 : 0.5)
+        
+      let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
+      let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: isWide ? 4 : 2)
+
+      let section = NSCollectionLayoutSection(group: group)
+      
+      return section
     }
 
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return 20
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        let cell: BookCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
     
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    // MARK: - UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
 }
