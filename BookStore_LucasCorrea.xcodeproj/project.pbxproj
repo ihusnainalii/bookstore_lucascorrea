@@ -11,9 +11,15 @@
 		A0181DCF24DCDC43007E0DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBE24DCDC42007E0DEF /* Assets.xcassets */; };
 		A0181DD024DCDC43007E0DEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBF24DCDC42007E0DEF /* LaunchScreen.storyboard */; };
 		A0181DD124DCDC43007E0DEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DC124DCDC42007E0DEF /* Main.storyboard */; };
-		A0181DD224DCDC43007E0DEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DC824DCDC42007E0DEF /* ViewController.swift */; };
 		A0181DD324DCDC43007E0DEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DCD24DCDC42007E0DEF /* AppDelegate.swift */; };
 		A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DCE24DCDC42007E0DEF /* SceneDelegate.swift */; };
+		A0181DD624DCDED3007E0DEF /* BookStoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DD524DCDED3007E0DEF /* BookStoreCollectionViewController.swift */; };
+		A0181DEA24DCE294007E0DEF /* BookStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DE924DCE294007E0DEF /* BookStoreCoordinator.swift */; };
+		A0181DED24DCE2E0007E0DEF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DEC24DCE2DF007E0DEF /* AppCoordinator.swift */; };
+		A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DEE24DCE309007E0DEF /* Coordinator.swift */; };
+		A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DEF24DCE309007E0DEF /* BaseCoordinator.swift */; };
+		A0181DF324DCE388007E0DEF /* Storyboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF224DCE388007E0DEF /* Storyboard+Ext.swift */; };
+		A0181DF524DCE41D007E0DEF /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +41,15 @@
 		A0181DBE24DCDC42007E0DEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0181DC024DCDC42007E0DEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0181DC224DCDC42007E0DEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A0181DC824DCDC42007E0DEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0181DCD24DCDC42007E0DEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0181DCE24DCDC42007E0DEF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A0181DD524DCDED3007E0DEF /* BookStoreCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreCollectionViewController.swift; sourceTree = "<group>"; };
+		A0181DE924DCE294007E0DEF /* BookStoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoreCoordinator.swift; sourceTree = "<group>"; };
+		A0181DEC24DCE2DF007E0DEF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A0181DEE24DCE309007E0DEF /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A0181DEF24DCE309007E0DEF /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		A0181DF224DCE388007E0DEF /* Storyboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Ext.swift"; sourceTree = "<group>"; };
+		A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +204,8 @@
 		A0181DC524DCDC42007E0DEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A0181DF224DCE388007E0DEF /* Storyboard+Ext.swift */,
+				A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,7 +222,7 @@
 		A0181DC724DCDC42007E0DEF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0181DC824DCDC42007E0DEF /* ViewController.swift */,
+				A0181DDD24DCE137007E0DEF /* BookStore */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +244,10 @@
 		A0181DCB24DCDC42007E0DEF /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A0181DEE24DCE309007E0DEF /* Coordinator.swift */,
+				A0181DEF24DCE309007E0DEF /* BaseCoordinator.swift */,
+				A0181DEB24DCE2AD007E0DEF /* App */,
+				A0181DDF24DCE22A007E0DEF /* BookStore */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -241,6 +259,30 @@
 				A0181DCE24DCDC42007E0DEF /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A0181DDD24DCE137007E0DEF /* BookStore */ = {
+			isa = PBXGroup;
+			children = (
+				A0181DD524DCDED3007E0DEF /* BookStoreCollectionViewController.swift */,
+			);
+			path = BookStore;
+			sourceTree = "<group>";
+		};
+		A0181DDF24DCE22A007E0DEF /* BookStore */ = {
+			isa = PBXGroup;
+			children = (
+				A0181DE924DCE294007E0DEF /* BookStoreCoordinator.swift */,
+			);
+			path = BookStore;
+			sourceTree = "<group>";
+		};
+		A0181DEB24DCE2AD007E0DEF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A0181DEC24DCE2DF007E0DEF /* AppCoordinator.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,9 +386,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0181DD224DCDC43007E0DEF /* ViewController.swift in Sources */,
+				A0181DEA24DCE294007E0DEF /* BookStoreCoordinator.swift in Sources */,
+				A0181DD624DCDED3007E0DEF /* BookStoreCollectionViewController.swift in Sources */,
+				A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */,
 				A0181DD324DCDC43007E0DEF /* AppDelegate.swift in Sources */,
+				A0181DF324DCE388007E0DEF /* Storyboard+Ext.swift in Sources */,
+				A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */,
 				A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */,
+				A0181DED24DCE2E0007E0DEF /* AppCoordinator.swift in Sources */,
+				A0181DF524DCE41D007E0DEF /* NSObject+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
