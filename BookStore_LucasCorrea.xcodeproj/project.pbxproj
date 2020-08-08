@@ -35,6 +35,9 @@
 		A0D1261B24DD732E00BE9BB3 /* BookStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261A24DD732E00BE9BB3 /* BookStoreService.swift */; };
 		A0D1261D24DD766100BE9BB3 /* BookStoreContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261C24DD766100BE9BB3 /* BookStoreContainer.swift */; };
 		A0D1261F24DE2DBB00BE9BB3 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261E24DE2DBA00BE9BB3 /* Book.swift */; };
+		A0EE80BA24DE324600A8673D /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE80B924DE324600A8673D /* BookViewModel.swift */; };
+		A0EE80BC24DE33A800A8673D /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE80BB24DE33A800A8673D /* ImageDownload.swift */; };
+		A0EE80BE24DE33CA00A8673D /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EE80BD24DE33CA00A8673D /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		A0D1261A24DD732E00BE9BB3 /* BookStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoreService.swift; sourceTree = "<group>"; };
 		A0D1261C24DD766100BE9BB3 /* BookStoreContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreContainer.swift; sourceTree = "<group>"; };
 		A0D1261E24DE2DBA00BE9BB3 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		A0EE80B924DE324600A8673D /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		A0EE80BB24DE33A800A8673D /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
+		A0EE80BD24DE33CA00A8673D /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +135,9 @@
 				A0181DB624DCDC41007E0DEF /* Helpers */,
 				A0181DB824DCDC42007E0DEF /* Networking */,
 				A0181DB524DCDC41007E0DEF /* Models */,
+				A0181DCA24DCDC42007E0DEF /* Views */,
 				A0181DC724DCDC42007E0DEF /* ViewControllers */,
 				A0181DC924DCDC42007E0DEF /* ViewModels */,
-				A0181DCA24DCDC42007E0DEF /* Views */,
 				A0181DBC24DCDC42007E0DEF /* Resources */,
 				A0181DA124DCDBC5007E0DEF /* Info.plist */,
 			);
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D1261824DD72F200BE9BB3 /* Constants.swift */,
+				A0EE80BB24DE33A800A8673D /* ImageDownload.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */,
 				A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */,
 				A0D1261224DD71F100BE9BB3 /* URLComponents+Ext.swift */,
+				A0EE80BD24DE33CA00A8673D /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */,
+				A0EE80B924DE324600A8673D /* BookViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -437,6 +446,7 @@
 				A0D1261324DD71F100BE9BB3 /* URLComponents+Ext.swift in Sources */,
 				A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */,
 				A0D1260B24DD700D00BE9BB3 /* NetworkClient.swift in Sources */,
+				A0EE80BA24DE324600A8673D /* BookViewModel.swift in Sources */,
 				A0D1261924DD72F200BE9BB3 /* Constants.swift in Sources */,
 				A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */,
 				A0D1261F24DE2DBB00BE9BB3 /* Book.swift in Sources */,
@@ -451,6 +461,8 @@
 				A0D1261724DD727D00BE9BB3 /* BookStoreClient.swift in Sources */,
 				A0D1261D24DD766100BE9BB3 /* BookStoreContainer.swift in Sources */,
 				A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */,
+				A0EE80BE24DE33CA00A8673D /* UIImageView+Ext.swift in Sources */,
+				A0EE80BC24DE33A800A8673D /* ImageDownload.swift in Sources */,
 				A0D1260424DD700000BE9BB3 /* Router.swift in Sources */,
 				A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */,
 				A0181DED24DCE2E0007E0DEF /* AppCoordinator.swift in Sources */,

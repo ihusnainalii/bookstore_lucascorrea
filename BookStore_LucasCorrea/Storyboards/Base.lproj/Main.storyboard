@@ -33,12 +33,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="151" height="205"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-7t-7Bm">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="emptyBook" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-7t-7Bm">
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="208"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="SuM-7t-7Bm" firstAttribute="top" secondItem="I0H-Xo-7D2" secondAttribute="top" id="4CY-dD-5zn"/>
                                         <constraint firstAttribute="trailing" secondItem="SuM-7t-7Bm" secondAttribute="trailing" id="8wb-3E-Kar"/>
@@ -54,6 +53,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="thumbnailImageView" destination="SuM-7t-7Bm" id="WzP-n8-myP"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -71,6 +73,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="example" width="128" height="177"/>
+        <image name="emptyBook" width="450" height="450"/>
     </resources>
 </document>

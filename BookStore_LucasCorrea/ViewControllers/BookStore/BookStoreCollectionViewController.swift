@@ -77,7 +77,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     private func bookLayoutSection(isWide: Bool) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 2, bottom: 5, trailing: 2)
         
         let groupHeight = NSCollectionLayoutDimension.fractionalWidth(isWide ? 0.25 : 0.5)
         
@@ -104,6 +104,10 @@ class BookStoreCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BookCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
+        let viewCellModel = BookViewModel()
+        viewCellModel.book = viewModel.bookItems[indexPath.row]
+        cell.configure(withViewModel: viewCellModel, indexPath: indexPath)
+    
         return cell
     }
     
