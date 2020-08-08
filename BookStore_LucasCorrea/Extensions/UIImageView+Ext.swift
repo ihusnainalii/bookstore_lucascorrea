@@ -11,9 +11,7 @@ import UIKit
 extension UIImageView {
     func setImage(withUrl url: String) {
         ImageDownload.shared.downloadImageFrom(urlString: url) { (image) in
-            DispatchQueue.main.async {
-                self.image = image
-            }
+            self.image = image
         }
     }
 }

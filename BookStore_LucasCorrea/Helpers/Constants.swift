@@ -10,5 +10,6 @@ import Foundation
 
 enum Config {
     static let timeout: TimeInterval = 60.0
+    static let query: String = "ios"
     static let maxResult: Int = 20
 }

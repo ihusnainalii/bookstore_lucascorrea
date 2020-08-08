@@ -19,6 +19,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     //
     // MARK: - Properties
     var viewModel: BookStoreViewModel
+    var currentPage: Int = 0
     
     /// Init
     /// - Parameters:
@@ -40,22 +41,22 @@ class BookStoreCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.collectionViewLayout = createCompositionalLayout()
+        collectionView.prefetchDataSource = self
         
-        loadBooks(withSearch: "ios", page: 0)
+        loadBooks(withSearch: Config.query, page: currentPage)
     }
     
     // MARK: - Private methods
     
-    
     private func loadBooks(withSearch search: String, page: Int) {
-    
+        
         let maxResult = String(Config.maxResult)
         let page = String(page)
         
-        viewModel.bookStoreList(search: search, maxResults: maxResult, startIndex: page, success: { [weak self] in
+        viewModel.bookStoreList(search: search, maxResults: maxResult, startIndex: page, success: { [weak self] indexPaths in
             DispatchQueue.main.async {
                 self?.activityIndicator.isHidden = true
-                self?.collectionView.reloadData()
+                self?.collectionView.insertItems(at: indexPaths)
             }
         }) {  [weak self] error in
             DispatchQueue.main.async {
@@ -77,7 +78,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     private func bookLayoutSection(isWide: Bool) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 2, bottom: 5, trailing: 2)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 2, bottom: 2, trailing: 2)
         
         let groupHeight = NSCollectionLayoutDimension.fractionalWidth(isWide ? 0.25 : 0.5)
         
@@ -104,10 +105,8 @@ class BookStoreCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BookCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
-        let viewCellModel = BookViewModel()
-        viewCellModel.book = viewModel.bookItems[indexPath.row]
-        cell.configure(withViewModel: viewCellModel, indexPath: indexPath)
-    
+        cell.thumbnailImageView.image = #imageLiteral(resourceName: "emptyBook")
+        cell.thumbnailImageView.setImage(withUrl: viewModel.bookItems[indexPath.row].thumbnail)
         return cell
     }
     
@@ -115,5 +114,17 @@ class BookStoreCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
+    }
+}
+
+
+extension BookStoreCollectionViewController: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let needsFetch = indexPaths.contains {$0.row >= viewModel.bookItems.count - 1 }
+        if needsFetch {
+            currentPage += 1
+            loadBooks(withSearch: Config.query, page: currentPage)
+        }
     }
 }
