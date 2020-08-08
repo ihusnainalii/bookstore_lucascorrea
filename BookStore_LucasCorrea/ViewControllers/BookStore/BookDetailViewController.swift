@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class BookDetailViewController: UIViewController {
     
@@ -59,7 +60,10 @@ class BookDetailViewController: UIViewController {
     }
     
     @IBAction func buyAction(_ sender: Any) {
-        
+        if let buyLink = viewModel.book?.buyLink, let url = URL(string: buyLink)  {
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
+        }
     }
     
 }
