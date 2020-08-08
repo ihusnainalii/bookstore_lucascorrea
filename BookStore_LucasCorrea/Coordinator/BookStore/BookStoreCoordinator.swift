@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class BookStoreCoordinator: BaseCoordinator {
     
     //
@@ -34,6 +33,7 @@ class BookStoreCoordinator: BaseCoordinator {
     override func start() {
         let bookStoreCollectionViewController = UIStoryboard.instantiate(identifier: BookStoreCollectionViewController.className) { coder -> BookStoreCollectionViewController? in
             let bookStoreViewModel = BookStoreViewModel()
+            bookStoreViewModel.coordinator = self
             
             // Dependency Injection
             return BookStoreCollectionViewController(coder: coder, viewModel: bookStoreViewModel)
@@ -43,4 +43,15 @@ class BookStoreCoordinator: BaseCoordinator {
         self.navigationController.viewControllers = [bookStoreCollectionViewController]
     }
 
+}
+
+//
+// MARK: - SearchCoordinatorDelegate
+extension BookStoreCoordinator: BookStoreCoordinatorDelegate {
+    
+    func showBookDetail(viewModel: BookDetailViewModel) {
+        let coordinator = BookDetailCoordinator(viewModel: viewModel, navigationController: self.navigationController)
+        self.start(coordinator: coordinator)
+    }
+    
 }

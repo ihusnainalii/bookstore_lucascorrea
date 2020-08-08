@@ -10,6 +10,10 @@ import Foundation
 
 typealias SuccessBookStoreHandler = ([IndexPath]) -> Void
 
+protocol BookStoreCoordinatorDelegate: AnyObject {
+    func showBookDetail(viewModel: BookDetailViewModel)
+}
+
 class BookStoreViewModel {
     
     //
@@ -17,6 +21,7 @@ class BookStoreViewModel {
     var bookItems: [Book]
     var service: BookStoreService
     var totalItems: Int
+    weak var coordinator: BookStoreCoordinatorDelegate?
     
     //
     // MARK: - Initializer DI
@@ -52,5 +57,11 @@ class BookStoreViewModel {
                     failure(error)
             }
         }
+    }
+    
+    func showDetail(of book: Book) {
+        let bookDetail = BookDetailViewModel()
+        bookDetail.book = book
+        coordinator?.showBookDetail(viewModel: bookDetail)
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00B812624DECE9E006D577B /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B812524DECE9E006D577B /* BookDetailViewController.swift */; };
+		A00B812924DECF37006D577B /* BookDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B812824DECF37006D577B /* BookDetailCoordinator.swift */; };
+		A00B812B24DED33F006D577B /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B812A24DED33F006D577B /* BookDetailViewModel.swift */; };
 		A0181DAB24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DAA24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift */; };
 		A0181DCF24DCDC43007E0DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBE24DCDC42007E0DEF /* Assets.xcassets */; };
 		A0181DD024DCDC43007E0DEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBF24DCDC42007E0DEF /* LaunchScreen.storyboard */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A00B812524DECE9E006D577B /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		A00B812824DECF37006D577B /* BookDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailCoordinator.swift; sourceTree = "<group>"; };
+		A00B812A24DED33F006D577B /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 		A0181D9024DCDBBF007E0DEF /* BookStore_LucasCorrea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_LucasCorrea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0181DA124DCDBC5007E0DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0181DA624DCDBC6007E0DEF /* BookStore_LucasCorreaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_LucasCorreaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A00B812724DECF21006D577B /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A00B812824DECF37006D577B /* BookDetailCoordinator.swift */,
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
 		A0181D8724DCDBBF007E0DEF = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */,
+				A00B812A24DED33F006D577B /* BookDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,6 +314,7 @@
 				A0181DEF24DCE309007E0DEF /* BaseCoordinator.swift */,
 				A0181DEB24DCE2AD007E0DEF /* App */,
 				A0181DDF24DCE22A007E0DEF /* BookStore */,
+				A00B812724DECF21006D577B /* BookDetail */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -316,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A0181DD524DCDED3007E0DEF /* BookStoreCollectionViewController.swift */,
+				A00B812524DECE9E006D577B /* BookDetailViewController.swift */,
 			);
 			path = BookStore;
 			sourceTree = "<group>";
@@ -441,10 +458,12 @@
 				A0181DEA24DCE294007E0DEF /* BookStoreCoordinator.swift in Sources */,
 				A0181DD624DCDED3007E0DEF /* BookStoreCollectionViewController.swift in Sources */,
 				A0D1261324DD71F100BE9BB3 /* URLComponents+Ext.swift in Sources */,
+				A00B812B24DED33F006D577B /* BookDetailViewModel.swift in Sources */,
 				A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */,
 				A0D1260B24DD700D00BE9BB3 /* NetworkClient.swift in Sources */,
 				A0D1261924DD72F200BE9BB3 /* Constants.swift in Sources */,
 				A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */,
+				A00B812924DECF37006D577B /* BookDetailCoordinator.swift in Sources */,
 				A0D1261F24DE2DBB00BE9BB3 /* Book.swift in Sources */,
 				A0D1261124DD701800BE9BB3 /* Service.swift in Sources */,
 				A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */,
@@ -460,6 +479,7 @@
 				A0EE80BE24DE33CA00A8673D /* UIImageView+Ext.swift in Sources */,
 				A0EE80BC24DE33A800A8673D /* ImageDownload.swift in Sources */,
 				A0D1260424DD700000BE9BB3 /* Router.swift in Sources */,
+				A00B812624DECE9E006D577B /* BookDetailViewController.swift in Sources */,
 				A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */,
 				A0181DED24DCE2E0007E0DEF /* AppCoordinator.swift in Sources */,
 				A0181DF524DCE41D007E0DEF /* NSObject+Ext.swift in Sources */,

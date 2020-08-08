@@ -121,6 +121,8 @@ class BookStoreCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
+        let book = viewModel.bookItems[indexPath.row]
+        viewModel.showDetail(of: book)
     }
 }
 
