@@ -40,6 +40,8 @@ class BookStoreCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        favoriteButton()
+        
         collectionView.collectionViewLayout = createCompositionalLayout()
         collectionView.prefetchDataSource = self
         
@@ -47,6 +49,20 @@ class BookStoreCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Private methods
+    
+    private func favoriteButton() {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "star"), for: .normal)
+        button.setImage(UIImage(systemName: "star.fill"), for: .selected)
+        let favoriteBarButtonItem = UIBarButtonItem(customView: button)
+        
+        navigationItem.rightBarButtonItem = favoriteBarButtonItem
+    }
+    
+    @objc private func favoriteAction(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
     
     private func loadBooks(withSearch search: String, currentPage: Int) {
         
@@ -120,7 +136,6 @@ class BookStoreCollectionViewController: UICollectionViewController {
     // MARK: - UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
         let book = viewModel.bookItems[indexPath.row]
         viewModel.showDetail(of: book)
     }

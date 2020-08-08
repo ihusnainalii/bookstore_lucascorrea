@@ -9,6 +9,7 @@
 import Foundation
 
 struct Book: Decodable {
+    let id: String
     let title: String
     let subtitle: String
     let authors: [String]
@@ -24,6 +25,7 @@ struct Book: Decodable {
         case imageLinks
         case saleInfo
         case listPrice
+        case id
         case title
         case subtitle
         case authors
@@ -38,6 +40,8 @@ struct Book: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let volumeInfo = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .volumeInfo)
+        
+        id = try container.decode(String.self, forKey: .id)
         title = try volumeInfo.decode(String.self, forKey: .title)
         subtitle = try volumeInfo.decodeIfPresent(String.self, forKey: .subtitle) ?? ""
         authors = try volumeInfo.decodeIfPresent([String].self, forKey: .authors) ?? []

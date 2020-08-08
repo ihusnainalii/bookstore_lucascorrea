@@ -55,8 +55,8 @@ class BookDetailViewController: UIViewController {
     //
     // MARK: - Actions
     
-    @IBAction func favoriteAction(_ sender: Any) {
-        
+    @IBAction func favoriteAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
     @IBAction func buyAction(_ sender: Any) {
