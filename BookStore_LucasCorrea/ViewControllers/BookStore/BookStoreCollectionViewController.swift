@@ -14,6 +14,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     
     //
     // MARK: - Oulets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //
     // MARK: - Properties
@@ -39,9 +40,31 @@ class BookStoreCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.collectionViewLayout = createCompositionalLayout()
+        
+        loadBooks(withSearch: "ios", page: 0)
     }
     
     // MARK: - Private methods
+    
+    
+    private func loadBooks(withSearch search: String, page: Int) {
+    
+        let maxResult = String(Config.maxResult)
+        let page = String(page)
+        
+        viewModel.bookStoreList(search: search, maxResults: maxResult, startIndex: page, success: { [weak self] in
+            DispatchQueue.main.async {
+                self?.activityIndicator.isHidden = true
+                self?.collectionView.reloadData()
+            }
+        }) {  [weak self] error in
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title: "Alert", message: error.errorDescription, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self?.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
     
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { _, layoutEnvironment in
@@ -75,7 +98,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return viewModel.bookItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

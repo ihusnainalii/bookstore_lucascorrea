@@ -1,5 +1,5 @@
 //
-//  SearchCoordinator.swift
+//  BookStoreCoordinator.swift
 //  BookStore_LucasCorrea
 //
 //  Created by Lucas Correa on 06/08/2020.

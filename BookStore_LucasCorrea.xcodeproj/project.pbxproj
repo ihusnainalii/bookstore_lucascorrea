@@ -24,6 +24,17 @@
 		A0181DFD24DCEBEA007E0DEF /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */; };
 		A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */; };
 		A0D1260124DD688C00BE9BB3 /* BookStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */; };
+		A0D1260424DD700000BE9BB3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1260224DD6FFF00BE9BB3 /* Router.swift */; };
+		A0D1260A24DD700D00BE9BB3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1260724DD700D00BE9BB3 /* NetworkError.swift */; };
+		A0D1260B24DD700D00BE9BB3 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1260824DD700D00BE9BB3 /* NetworkClient.swift */; };
+		A0D1261124DD701800BE9BB3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1260E24DD701800BE9BB3 /* Service.swift */; };
+		A0D1261324DD71F100BE9BB3 /* URLComponents+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261224DD71F100BE9BB3 /* URLComponents+Ext.swift */; };
+		A0D1261524DD723600BE9BB3 /* BookStoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261424DD723600BE9BB3 /* BookStoreRouter.swift */; };
+		A0D1261724DD727D00BE9BB3 /* BookStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261624DD727D00BE9BB3 /* BookStoreClient.swift */; };
+		A0D1261924DD72F200BE9BB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261824DD72F200BE9BB3 /* Constants.swift */; };
+		A0D1261B24DD732E00BE9BB3 /* BookStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261A24DD732E00BE9BB3 /* BookStoreService.swift */; };
+		A0D1261D24DD766100BE9BB3 /* BookStoreContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261C24DD766100BE9BB3 /* BookStoreContainer.swift */; };
+		A0D1261F24DE2DBB00BE9BB3 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1261E24DE2DBA00BE9BB3 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +69,17 @@
 		A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 		A0D1260024DD688C00BE9BB3 /* BookStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewModel.swift; sourceTree = "<group>"; };
+		A0D1260224DD6FFF00BE9BB3 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A0D1260724DD700D00BE9BB3 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A0D1260824DD700D00BE9BB3 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		A0D1260E24DD701800BE9BB3 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A0D1261224DD71F100BE9BB3 /* URLComponents+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Ext.swift"; sourceTree = "<group>"; };
+		A0D1261424DD723600BE9BB3 /* BookStoreRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoreRouter.swift; sourceTree = "<group>"; };
+		A0D1261624DD727D00BE9BB3 /* BookStoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoreClient.swift; sourceTree = "<group>"; };
+		A0D1261824DD72F200BE9BB3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0D1261A24DD732E00BE9BB3 /* BookStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoreService.swift; sourceTree = "<group>"; };
+		A0D1261C24DD766100BE9BB3 /* BookStoreContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreContainer.swift; sourceTree = "<group>"; };
+		A0D1261E24DE2DBA00BE9BB3 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +150,8 @@
 		A0181DB524DCDC41007E0DEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1261C24DD766100BE9BB3 /* BookStoreContainer.swift */,
+				A0D1261E24DE2DBA00BE9BB3 /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +159,7 @@
 		A0181DB624DCDC41007E0DEF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1261824DD72F200BE9BB3 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,6 +184,8 @@
 		A0181DB924DCDC42007E0DEF /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1260224DD6FFF00BE9BB3 /* Router.swift */,
+				A0D1261424DD723600BE9BB3 /* BookStoreRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -166,6 +193,9 @@
 		A0181DBA24DCDC42007E0DEF /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1260824DD700D00BE9BB3 /* NetworkClient.swift */,
+				A0D1260724DD700D00BE9BB3 /* NetworkError.swift */,
+				A0D1261624DD727D00BE9BB3 /* BookStoreClient.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -173,6 +203,8 @@
 		A0181DBB24DCDC42007E0DEF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A0D1260E24DD701800BE9BB3 /* Service.swift */,
+				A0D1261A24DD732E00BE9BB3 /* BookStoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,6 +248,7 @@
 				A0181DF424DCE41D007E0DEF /* NSObject+Ext.swift */,
 				A0181DFC24DCEBEA007E0DEF /* UICollectionView+Ext.swift */,
 				A0181DFE24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift */,
+				A0D1261224DD71F100BE9BB3 /* URLComponents+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,16 +431,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D1260A24DD700D00BE9BB3 /* NetworkError.swift in Sources */,
 				A0181DEA24DCE294007E0DEF /* BookStoreCoordinator.swift in Sources */,
 				A0181DD624DCDED3007E0DEF /* BookStoreCollectionViewController.swift in Sources */,
+				A0D1261324DD71F100BE9BB3 /* URLComponents+Ext.swift in Sources */,
 				A0181DFF24DCED3C007E0DEF /* UICollectionViewCell+Ext.swift in Sources */,
+				A0D1260B24DD700D00BE9BB3 /* NetworkClient.swift in Sources */,
+				A0D1261924DD72F200BE9BB3 /* Constants.swift in Sources */,
 				A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */,
+				A0D1261F24DE2DBB00BE9BB3 /* Book.swift in Sources */,
+				A0D1261124DD701800BE9BB3 /* Service.swift in Sources */,
 				A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */,
+				A0D1261B24DD732E00BE9BB3 /* BookStoreService.swift in Sources */,
+				A0D1261524DD723600BE9BB3 /* BookStoreRouter.swift in Sources */,
 				A0181DD324DCDC43007E0DEF /* AppDelegate.swift in Sources */,
 				A0181DFD24DCEBEA007E0DEF /* UICollectionView+Ext.swift in Sources */,
 				A0D1260124DD688C00BE9BB3 /* BookStoreViewModel.swift in Sources */,
 				A0181DF324DCE388007E0DEF /* Storyboard+Ext.swift in Sources */,
+				A0D1261724DD727D00BE9BB3 /* BookStoreClient.swift in Sources */,
+				A0D1261D24DD766100BE9BB3 /* BookStoreContainer.swift in Sources */,
 				A0181DF124DCE309007E0DEF /* BaseCoordinator.swift in Sources */,
+				A0D1260424DD700000BE9BB3 /* Router.swift in Sources */,
 				A0181DD424DCDC43007E0DEF /* SceneDelegate.swift in Sources */,
 				A0181DED24DCE2E0007E0DEF /* AppCoordinator.swift in Sources */,
 				A0181DF524DCE41D007E0DEF /* NSObject+Ext.swift in Sources */,
