@@ -16,12 +16,14 @@ class BookStoreViewModel {
     // MARK: - Properties
     var bookItems: [Book]
     var service: BookStoreService
+    var totalItems: Int
     
     //
     // MARK: - Initializer DI
     init(service: BookStoreService = BookStoreService(client: BookStoreClient())) {
         self.service = service
         self.bookItems = [Book]()
+        self.totalItems = 0
     }
     
     //
@@ -43,6 +45,7 @@ class BookStoreViewModel {
                     }
                     
                     self.bookItems += bookStoreContainer.books
+                    self.totalItems = bookStoreContainer.totalItems
                     
                     success(newIndexPaths)
                 case .failure(let error):

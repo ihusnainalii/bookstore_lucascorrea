@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,22 +34,33 @@
                                     <rect key="frame" x="0.0" y="0.0" width="151" height="205"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="emptyBook" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-7t-7Bm">
-                                            <rect key="frame" x="0.0" y="0.0" width="151" height="208"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O morro dos ventos uivantes: Wuthering heights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="PtJ-pf-CET">
+                                            <rect key="frame" x="0.0" y="0.0" width="151" height="205"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBook" translatesAutoresizingMaskIntoConstraints="NO" id="SuM-7t-7Bm">
+                                            <rect key="frame" x="0.0" y="0.0" width="151" height="205"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SuM-7t-7Bm" firstAttribute="top" secondItem="I0H-Xo-7D2" secondAttribute="top" id="4CY-dD-5zn"/>
                                         <constraint firstAttribute="trailing" secondItem="SuM-7t-7Bm" secondAttribute="trailing" id="8wb-3E-Kar"/>
+                                        <constraint firstItem="PtJ-pf-CET" firstAttribute="leading" secondItem="I0H-Xo-7D2" secondAttribute="leading" id="fvc-Zf-xZM"/>
                                         <constraint firstItem="SuM-7t-7Bm" firstAttribute="leading" secondItem="I0H-Xo-7D2" secondAttribute="leading" id="lF0-LM-aOO"/>
+                                        <constraint firstAttribute="bottom" secondItem="PtJ-pf-CET" secondAttribute="bottom" id="m6q-iX-y2y"/>
+                                        <constraint firstAttribute="trailing" secondItem="PtJ-pf-CET" secondAttribute="trailing" id="mpi-j1-b9a"/>
                                         <constraint firstAttribute="bottom" secondItem="SuM-7t-7Bm" secondAttribute="bottom" id="oBV-J8-2mr"/>
+                                        <constraint firstItem="PtJ-pf-CET" firstAttribute="top" secondItem="I0H-Xo-7D2" secondAttribute="top" id="rQd-ES-Eus"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="151" height="205"/>
                                 <connections>
                                     <outlet property="thumbnailImageView" destination="SuM-7t-7Bm" id="WzP-n8-myP"/>
+                                    <outlet property="titleLabel" destination="PtJ-pf-CET" id="HOn-dm-tK5"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -64,6 +76,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtp-tC-Axt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21.739130434782609" y="3.3482142857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kj5-L4-ODE">
+            <objects>
+                <viewController id="mqr-g8-nnO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="33W-rM-w09">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Nf0-fp-tNO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giU-GO-Ntn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="1"/>
         </scene>
     </scenes>
     <resources>

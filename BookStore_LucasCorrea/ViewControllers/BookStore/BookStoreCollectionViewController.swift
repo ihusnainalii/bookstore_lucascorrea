@@ -43,17 +43,22 @@ class BookStoreCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
         collectionView.prefetchDataSource = self
         
-        loadBooks(withSearch: Config.query, page: currentPage)
+        loadBooks(withSearch: Config.query, currentPage: currentPage)
     }
     
     // MARK: - Private methods
     
-    private func loadBooks(withSearch search: String, page: Int) {
+    private func loadBooks(withSearch search: String, currentPage: Int) {
         
+        let nextStartIndex = currentPage * Config.maxResult
+        if nextStartIndex > viewModel.totalItems {
+            return
+        }
+        
+        let startIndex = String(nextStartIndex)
         let maxResult = String(Config.maxResult)
-        let page = String(page)
         
-        viewModel.bookStoreList(search: search, maxResults: maxResult, startIndex: page, success: { [weak self] indexPaths in
+        viewModel.bookStoreList(search: search, maxResults: maxResult, startIndex: startIndex, success: { [weak self] indexPaths in
             DispatchQueue.main.async {
                 self?.activityIndicator.isHidden = true
                 self?.collectionView.insertItems(at: indexPaths)
@@ -105,8 +110,10 @@ class BookStoreCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BookCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
+        cell.titleLabel.text = viewModel.bookItems[indexPath.row].title
         cell.thumbnailImageView.image = #imageLiteral(resourceName: "emptyBook")
         cell.thumbnailImageView.setImage(withUrl: viewModel.bookItems[indexPath.row].thumbnail)
+        cell.thumbnailImageView.isHidden = (viewModel.bookItems[indexPath.row].thumbnail.count == 0)
         return cell
     }
     
@@ -124,7 +131,7 @@ extension BookStoreCollectionViewController: UICollectionViewDataSourcePrefetchi
         let needsFetch = indexPaths.contains {$0.row >= viewModel.bookItems.count - 1 }
         if needsFetch {
             currentPage += 1
-            loadBooks(withSearch: Config.query, page: currentPage)
+            loadBooks(withSearch: Config.query, currentPage: currentPage)
         }
     }
 }

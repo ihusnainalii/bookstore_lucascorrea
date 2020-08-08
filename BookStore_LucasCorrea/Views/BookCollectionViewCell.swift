@@ -13,5 +13,6 @@ class BookCollectionViewCell: UICollectionViewCell {
     //
     // MARK: - Properties
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
 }

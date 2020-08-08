@@ -43,8 +43,8 @@ struct Book: Decodable {
         authors = try volumeInfo.decodeIfPresent([String].self, forKey: .authors) ?? []
         description = try volumeInfo.decodeIfPresent(String.self, forKey: .description) ?? ""
         
-        let imageLinks = try volumeInfo.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageLinks)
-        thumbnail = try imageLinks.decode(String.self, forKey: .thumbnail)
+        let imageLinks = try? volumeInfo.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageLinks)
+        thumbnail = try imageLinks?.decodeIfPresent(String.self, forKey: .thumbnail) ?? ""
         
         let saleInfo = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .saleInfo)
         saleability = try saleInfo.decode(String.self, forKey: .saleability)
