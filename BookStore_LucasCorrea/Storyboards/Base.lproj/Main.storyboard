@@ -162,7 +162,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="emptyBook" width="450" height="450"/>
+        <image name="emptyBook" width="200" height="200"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>

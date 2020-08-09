@@ -18,15 +18,23 @@ class BookDetailViewModel {
     // MARK: - Properties
     var book: Book?
     weak var coordinator: BookDetailCoordinatorDelegate?
+    let bookRepository: Repository
+    
+    //
+    // MARK: - Initializer DI
+    init(bookRepository: Repository = CoreDataRepository()) {
+        self.bookRepository = bookRepository
+    }
     
     //
     // MARK: - Public Functions
     func isFavorite() -> Bool {
         guard let book = book else { return false }
-        let predicate = NSPredicate(format: "id = %@", book.id)
-        let books = CoreDataManager.shared.fetch(BookStore.self, predicate: predicate)
+        guard let _ = bookRepository.getBook(id: book.id) else {
+            return false
+        }
         
-        return books?.count ?? 0 > 0 
+        return true
     }
     
     func bookmark(favorite: Bool) {
@@ -45,23 +53,12 @@ class BookDetailViewModel {
     // MARK: - Private Functions
     private func favoriteBook() {
         guard let book = book else { return }
-        let bookStore = CoreDataManager.shared.add(BookStore.self)
-        bookStore?.id = book.id
-        bookStore?.title = book.title
-        bookStore?.subtitle = book.subtitle
-        bookStore?.authors = book.authors.joined(separator: ", ")
-        bookStore?.descriptionBook = book.description
-        bookStore?.thumbnail = book.thumbnail
-        bookStore?.saleability = book.saleability.rawValue
-        bookStore?.price = book.price ?? 0
-        bookStore?.currencyCode = book.currencyCode
-        bookStore?.buyLink = book.buyLink
-        CoreDataManager.shared.save()
+        bookRepository.save(book: book)
     }
     
     private func unFavoriteBook() {
         guard let book = book else { return }
-        let predicate = NSPredicate(format: "id = %@", book.id)
-        CoreDataManager.shared.delete(BookStore.self, predicate: predicate, nil)
+        bookRepository.delete(book: book)
     }
+    
 }

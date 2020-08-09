@@ -56,14 +56,6 @@ class BookStoreCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Private Functions
-    private func createFavoriteButton() {
-        favoriteButton.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
-        favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
-        favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
-        let favoriteBarButtonItem = UIBarButtonItem(customView: favoriteButton)
-        
-        navigationItem.rightBarButtonItem = favoriteBarButtonItem
-    }
     
     @objc private func favoriteAction(sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -74,6 +66,15 @@ class BookStoreCollectionViewController: UICollectionViewController {
                 self?.collectionView.setContentOffset(.zero, animated: false)
             }
         }
+    }
+    
+    private func createFavoriteButton() {
+        favoriteButton.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
+        favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+        let favoriteBarButtonItem = UIBarButtonItem(customView: favoriteButton)
+        
+        navigationItem.rightBarButtonItem = favoriteBarButtonItem
     }
     
     private func loadBooks(withSearch search: String, currentPage: Int) {

@@ -41,7 +41,7 @@ class BookDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fillScreen()
+        fillUI()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -55,7 +55,7 @@ class BookDetailViewController: UIViewController {
     
     //
     // MARK: - Private Functions
-    private func fillScreen() {
+    private func fillUI() {
         titleLabel.text = viewModel.book?.title
         authorsLabel.text = viewModel.book?.authors.joined(separator: ", ")
         descriptionTexView.text = viewModel.book?.description

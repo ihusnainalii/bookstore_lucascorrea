@@ -27,13 +27,16 @@ class BookStoreViewModel {
     var service: BookStoreService
     var totalItems: Int
     weak var coordinator: BookStoreCoordinatorDelegate?
+    let bookRepository: Repository
     
     //
     // MARK: - Initializer DI
-    init(service: BookStoreService = BookStoreService(client: BookStoreClient())) {
+    init(service: BookStoreService = BookStoreService(client: BookStoreClient()),
+         bookRepository: Repository = CoreDataRepository()) {
         self.service = service
         self.bookItems = [Book]()
         self.totalItems = 0
+        self.bookRepository = bookRepository
     }
     
     //
@@ -49,10 +52,7 @@ class BookStoreViewModel {
     }
     
     func loadBooksFavoriteList() {
-        if let booksFavorite = CoreDataManager.shared.fetch(BookStore.self) {
-            //                filteredBookItems = bookItems.filter { booksFavorite.map { $0.id }.contains( $0.id ) }
-            filteredBookItems = booksFavorite.map { Book(id: $0.id!, title: $0.title!, subtitle: $0.subtitle!, authors: $0.authors?.components(separatedBy: ", ") ?? [""], description: $0.descriptionBook!, thumbnail: $0.thumbnail!, saleability: SaleAbilityStatus(rawValue: $0.saleability!)!, price: $0.price, currencyCode: $0.currencyCode, buyLink: $0.buyLink)}
-        }
+        filteredBookItems = bookRepository.getAll()
     }
     
     /// BookStore list

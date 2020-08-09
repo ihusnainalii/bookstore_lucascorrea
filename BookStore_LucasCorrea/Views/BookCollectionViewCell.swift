@@ -15,6 +15,8 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    // MARK: - Public Functions
+    
     func configure(withViewModel viewModel:BookCellViewModel) {
         titleLabel.text = viewModel.book.title
         thumbnailImageView.image = #imageLiteral(resourceName: "emptyBook")

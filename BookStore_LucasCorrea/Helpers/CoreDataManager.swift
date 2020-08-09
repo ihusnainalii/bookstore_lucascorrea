@@ -11,7 +11,6 @@ import CoreData
 
 public class CoreDataManager {
     
-    public typealias VoidCompletion = () -> ()
     static let shared = CoreDataManager(modelName: "BookStore")
     
     // MARK: - Properties
@@ -48,7 +47,6 @@ public class CoreDataManager {
 extension CoreDataManager {
     
     public func add<M: NSManagedObject>(_ type: M.Type) -> M? {
-        
         var modelObject: M?
         
         if let entity = NSEntityDescription.entity(forEntityName: M.description(), in: context) {
@@ -103,18 +101,13 @@ extension CoreDataManager {
 // MARK: - Save
 extension CoreDataManager {
     
-    public func save(_ completion: VoidCompletion? = nil) {
-        
-        context.perform {
-            if self.context.hasChanges {
-                do {
-                    try self.context.save()
-                } catch {
-                    let nserror = error as NSError
-                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                }
-            }
-            completion?()
+    @discardableResult
+    public func save() -> Bool {
+        do {
+            try self.context.save()
+            return true
+        } catch {
+            return false
         }
     }
 }
@@ -122,21 +115,18 @@ extension CoreDataManager {
 // MARK: - Delete
 extension CoreDataManager {
     
-    public func delete(by objectID: NSManagedObjectID, _ completion: VoidCompletion? = nil) {
+    public func delete(by objectID: NSManagedObjectID) {
         
         let managedObject = context.object(with: objectID)
         
-        context.perform {
-            self.context.delete(managedObject)
-            completion?()
-        }
+        self.context.delete(managedObject)
     }
     
-    public func delete<M: NSManagedObject>(_ type: M.Type, predicate: NSPredicate? = nil, _ completion: VoidCompletion? = nil) {
+    public func delete<M: NSManagedObject>(_ type: M.Type, predicate: NSPredicate? = nil) {
         
         if let objects = fetch(type, predicate: predicate) {
             for modelObject in objects {
-                delete(by: modelObject.objectID, completion)
+                delete(by: modelObject.objectID)
             }
         }
         
