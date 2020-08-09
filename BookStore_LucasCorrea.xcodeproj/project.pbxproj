@@ -15,6 +15,7 @@
 		A00B814324E03FC1006D577B /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B814224E03FC1006D577B /* BookCellViewModel.swift */; };
 		A00B814624E081A3006D577B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B814524E081A2006D577B /* Repository.swift */; };
 		A00B814824E08236006D577B /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B814724E08236006D577B /* CoreDataRepository.swift */; };
+		A00B814A24E0A3B2006D577B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A00B814924E0A3B1006D577B /* README.md */; };
 		A0181DAB24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DAA24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift */; };
 		A0181DCF24DCDC43007E0DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBE24DCDC42007E0DEF /* Assets.xcassets */; };
 		A0181DD024DCDC43007E0DEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBF24DCDC42007E0DEF /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		A00B814224E03FC1006D577B /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
 		A00B814524E081A2006D577B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		A00B814724E08236006D577B /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		A00B814924E0A3B1006D577B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0181D9024DCDBBF007E0DEF /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0181DA124DCDBC5007E0DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0181DA624DCDBC6007E0DEF /* BookStore_LucasCorreaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_LucasCorreaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 		A0181D8724DCDBBF007E0DEF = {
 			isa = PBXGroup;
 			children = (
+				A00B814924E0A3B1006D577B /* README.md */,
 				A0181D9224DCDBBF007E0DEF /* BookStore_LucasCorrea */,
 				A0181DA924DCDBC6007E0DEF /* BookStore_LucasCorreaTests */,
 				A0181D9124DCDBBF007E0DEF /* Products */,
@@ -459,6 +462,7 @@
 			files = (
 				A0181DCF24DCDC43007E0DEF /* Assets.xcassets in Resources */,
 				A0181DD124DCDC43007E0DEF /* Main.storyboard in Resources */,
+				A00B814A24E0A3B2006D577B /* README.md in Resources */,
 				A0181DD024DCDC43007E0DEF /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
