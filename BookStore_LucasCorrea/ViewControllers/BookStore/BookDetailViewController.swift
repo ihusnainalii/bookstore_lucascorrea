@@ -61,6 +61,9 @@ class BookDetailViewController: UIViewController {
         descriptionTexView.text = viewModel.book?.description
         
         buyButton.isHidden = viewModel.book?.saleability == .notForSale
+        
+        buyButton.setTitle(viewModel.book?.priceNormalize(), for: .normal)
+        
         favoriteButton.isSelected = viewModel.isFavorite()
     }
     

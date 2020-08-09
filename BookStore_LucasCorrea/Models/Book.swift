@@ -78,4 +78,17 @@ struct Book: Decodable {
         price = try listPrice?.decode(Double.self, forKey: .price)
         currencyCode = try listPrice?.decode(String.self, forKey: .currencyCode)
     }
+    
+    func priceNormalize() -> String {
+        guard let price = price, let currencyCode = currencyCode else {
+            return ""
+        }
+        let symbol = getSymbol(forCurrencyCode: currencyCode)!
+        return "\(symbol)\(String(format: "%.2f", price))"
+    }
+    
+    func getSymbol(forCurrencyCode code: String) -> String? {
+        let locale = NSLocale(localeIdentifier: code)
+        return locale.displayName(forKey: NSLocale.Key.currencySymbol, value: code)
+    }
 }
