@@ -15,4 +15,11 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    func configure(withViewModel viewModel:BookCellViewModel) {
+        titleLabel.text = viewModel.book.title
+        thumbnailImageView.image = #imageLiteral(resourceName: "emptyBook")
+        thumbnailImageView.setImage(withUrl: viewModel.book.thumbnail)
+        thumbnailImageView.isHidden = (viewModel.book.thumbnail.count == 0)
+    }
+    
 }

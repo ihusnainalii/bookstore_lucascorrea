@@ -18,6 +18,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     var viewModel: BookStoreViewModel
     var currentPage: Int = 0
+    var favoriteButton: UIButton = UIButton()
     
     /// Init
     /// - Parameters:
@@ -37,7 +38,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        favoriteButton()
+        createFavoriteButton()
         
         collectionView.collectionViewLayout = createCompositionalLayout()
         collectionView.prefetchDataSource = self
@@ -46,18 +47,23 @@ class BookStoreCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Private Functions
-    private func favoriteButton() {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
-        button.setImage(UIImage(systemName: "star"), for: .normal)
-        button.setImage(UIImage(systemName: "star.fill"), for: .selected)
-        let favoriteBarButtonItem = UIBarButtonItem(customView: button)
+    private func createFavoriteButton() {
+        favoriteButton.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
+        favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+        let favoriteBarButtonItem = UIBarButtonItem(customView: favoriteButton)
         
         navigationItem.rightBarButtonItem = favoriteBarButtonItem
     }
     
     @objc private func favoriteAction(sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        
+        viewModel.filterBook(favorite: sender.isSelected) { [weak self] in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
     }
     
     private func loadBooks(withSearch search: String, currentPage: Int) {
@@ -114,23 +120,37 @@ class BookStoreCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if favoriteButton.isSelected {
+            return viewModel.filteredBookItems.count
+        }
         return viewModel.bookItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BookCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
-        cell.titleLabel.text = viewModel.bookItems[indexPath.row].title
-        cell.thumbnailImageView.image = #imageLiteral(resourceName: "emptyBook")
-        cell.thumbnailImageView.setImage(withUrl: viewModel.bookItems[indexPath.row].thumbnail)
-        cell.thumbnailImageView.isHidden = (viewModel.bookItems[indexPath.row].thumbnail.count == 0)
+        let bookCellViewModel = BookCellViewModel()
+        if favoriteButton.isSelected {
+            bookCellViewModel.book = viewModel.filteredBookItems[indexPath.row]
+        } else {
+            bookCellViewModel.book = viewModel.bookItems[indexPath.row]
+        }
+        
+        cell.configure(withViewModel: bookCellViewModel)
+        
         return cell
     }
     
     // MARK: - UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let book = viewModel.bookItems[indexPath.row]
-        viewModel.showDetail(of: book)
+
+        if favoriteButton.isSelected {
+            viewModel.showDetail(of: viewModel.filteredBookItems[indexPath.row])
+        } else {
+            viewModel.showDetail(of: viewModel.bookItems[indexPath.row])
+        }
+
     }
 }
 
@@ -138,10 +158,12 @@ class BookStoreCollectionViewController: UICollectionViewController {
 extension BookStoreCollectionViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        let needsFetch = indexPaths.contains {$0.row >= viewModel.bookItems.count - 1 }
-        if needsFetch {
-            currentPage += 1
-            loadBooks(withSearch: Config.query, currentPage: currentPage)
+        if !favoriteButton.isSelected {
+            let needsFetch = indexPaths.contains {$0.row >= viewModel.bookItems.count - 1 }
+            if needsFetch {
+                currentPage += 1
+                loadBooks(withSearch: Config.query, currentPage: currentPage)
+            }
         }
     }
 }

@@ -18,7 +18,12 @@ class BookStoreViewModel {
     
     //
     // MARK: - Properties
-    var bookItems: [Book]
+    var bookItems: [Book] {
+        didSet {
+            filteredBookItems = bookItems
+        }
+    }
+    var filteredBookItems: [Book]!
     var service: BookStoreService
     var totalItems: Int
     weak var coordinator: BookStoreCoordinatorDelegate?
@@ -33,6 +38,17 @@ class BookStoreViewModel {
     
     //
     // MARK: - Public Functions
+    
+    func filterBook(favorite: Bool, completion: () -> Void) {
+        if favorite {
+            if let booksFavorite = CoreDataManager.shared.fetch(BookStore.self) {
+                filteredBookItems = bookItems.filter { booksFavorite.map { $0.id }.contains( $0.id ) }
+            }
+        } else {
+            filteredBookItems = bookItems
+        }
+        completion()
+    }
     
     /// BookStore list
     /// - Parameters:
