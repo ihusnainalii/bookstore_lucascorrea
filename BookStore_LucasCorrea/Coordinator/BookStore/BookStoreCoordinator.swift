@@ -23,7 +23,7 @@ class BookStoreCoordinator: BaseCoordinator {
     //
     // MARK: - Life cycle
     deinit {
-        print("deinit search coordinator")
+        print("deinit book store coordinator")
     }
     
     //
@@ -46,7 +46,7 @@ class BookStoreCoordinator: BaseCoordinator {
 }
 
 //
-// MARK: - SearchCoordinatorDelegate
+// MARK: - BookStoreCoordinatorDelegate
 extension BookStoreCoordinator: BookStoreCoordinatorDelegate {
     
     func showBookDetail(viewModel: BookDetailViewModel) {

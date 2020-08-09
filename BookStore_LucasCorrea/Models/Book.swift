@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum SaleAbilityStatus: String, Decodable {
+    case forSale = "FOR_SALE"
+    case notForSale = "NOT_FOR_SALE"
+}
+
 struct Book: Decodable {
     let id: String
     let title: String
@@ -15,7 +20,7 @@ struct Book: Decodable {
     let authors: [String]
     let description: String
     let thumbnail: String
-    let saleability: String
+    let saleability: SaleAbilityStatus
     let price: Double?
     let currencyCode: String?
     let buyLink: String?
@@ -51,7 +56,7 @@ struct Book: Decodable {
         thumbnail = try imageLinks?.decodeIfPresent(String.self, forKey: .thumbnail) ?? ""
         
         let saleInfo = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .saleInfo)
-        saleability = try saleInfo.decode(String.self, forKey: .saleability)
+        saleability = try saleInfo.decode(SaleAbilityStatus.self, forKey: .saleability)
         buyLink = try? saleInfo.decode(String.self, forKey: .buyLink)
         
         let listPrice = try? saleInfo.nestedContainer(keyedBy: CodingKeys.self, forKey: .listPrice)

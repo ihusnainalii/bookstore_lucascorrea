@@ -25,7 +25,6 @@ class BookStoreService: Service {
     //
     // MARK: - Public Functions
     
-    
     /// Load book list
     /// - Parameters:
     ///   - search: query string

@@ -10,6 +10,8 @@
 		A00B812624DECE9E006D577B /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B812524DECE9E006D577B /* BookDetailViewController.swift */; };
 		A00B812924DECF37006D577B /* BookDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B812824DECF37006D577B /* BookDetailCoordinator.swift */; };
 		A00B812B24DED33F006D577B /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B812A24DED33F006D577B /* BookDetailViewModel.swift */; };
+		A00B812E24DEFECB006D577B /* BookStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A00B812C24DEFECB006D577B /* BookStore.xcdatamodeld */; };
+		A00B813C24DF04EA006D577B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B813B24DF04EA006D577B /* CoreDataManager.swift */; };
 		A0181DAB24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0181DAA24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift */; };
 		A0181DCF24DCDC43007E0DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBE24DCDC42007E0DEF /* Assets.xcassets */; };
 		A0181DD024DCDC43007E0DEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0181DBF24DCDC42007E0DEF /* LaunchScreen.storyboard */; };
@@ -56,6 +58,8 @@
 		A00B812524DECE9E006D577B /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		A00B812824DECF37006D577B /* BookDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailCoordinator.swift; sourceTree = "<group>"; };
 		A00B812A24DED33F006D577B /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
+		A00B812D24DEFECB006D577B /* BookStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookStore.xcdatamodel; sourceTree = "<group>"; };
+		A00B813B24DF04EA006D577B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A0181D9024DCDBBF007E0DEF /* BookStore_LucasCorrea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_LucasCorrea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0181DA124DCDBC5007E0DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0181DA624DCDBC6007E0DEF /* BookStore_LucasCorreaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_LucasCorreaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +183,7 @@
 			children = (
 				A0D1261824DD72F200BE9BB3 /* Constants.swift */,
 				A0EE80BB24DE33A800A8673D /* ImageDownload.swift */,
+				A00B813B24DF04EA006D577B /* CoreDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 		A0181DB724DCDC41007E0DEF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A00B812C24DEFECB006D577B /* BookStore.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 			files = (
 				A0D1260A24DD700D00BE9BB3 /* NetworkError.swift in Sources */,
 				A0181DEA24DCE294007E0DEF /* BookStoreCoordinator.swift in Sources */,
+				A00B812E24DEFECB006D577B /* BookStore.xcdatamodeld in Sources */,
 				A0181DD624DCDED3007E0DEF /* BookStoreCollectionViewController.swift in Sources */,
 				A0D1261324DD71F100BE9BB3 /* URLComponents+Ext.swift in Sources */,
 				A00B812B24DED33F006D577B /* BookDetailViewModel.swift in Sources */,
@@ -464,6 +471,7 @@
 				A0D1261924DD72F200BE9BB3 /* Constants.swift in Sources */,
 				A0181DF024DCE309007E0DEF /* Coordinator.swift in Sources */,
 				A00B812924DECF37006D577B /* BookDetailCoordinator.swift in Sources */,
+				A00B813C24DF04EA006D577B /* CoreDataManager.swift in Sources */,
 				A0D1261F24DE2DBB00BE9BB3 /* Book.swift in Sources */,
 				A0D1261124DD701800BE9BB3 /* Service.swift in Sources */,
 				A0181DFB24DCEB5E007E0DEF /* BookCollectionViewCell.swift in Sources */,
@@ -749,6 +757,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A00B812C24DEFECB006D577B /* BookStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A00B812D24DEFECB006D577B /* BookStore.xcdatamodel */,
+			);
+			currentVersion = A00B812D24DEFECB006D577B /* BookStore.xcdatamodel */;
+			path = BookStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A0181D8824DCDBBF007E0DEF /* Project object */;
 }

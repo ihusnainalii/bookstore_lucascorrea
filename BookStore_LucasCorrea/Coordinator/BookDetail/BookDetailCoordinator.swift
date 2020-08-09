@@ -28,7 +28,7 @@ class BookDetailCoordinator: BaseCoordinator {
     //
     // MARK: - Life cycle
     deinit {
-        print("deinit search coordinator")
+        print("deinit book detail coordinator")
     }
     
     //
@@ -37,6 +37,7 @@ class BookDetailCoordinator: BaseCoordinator {
     /// Start
     override func start() {
         let bookDetailViewController = UIStoryboard.instantiate(identifier: BookDetailViewController.className) { coder -> BookDetailViewController? in
+            self.viewModel.coordinator = self
             return BookDetailViewController(coder: coder, viewModel: self.viewModel)
         }
         
@@ -44,4 +45,12 @@ class BookDetailCoordinator: BaseCoordinator {
         self.navigationController.pushViewController(bookDetailViewController, animated: true)
     }
 
+}
+
+//
+// MARK: - BookDetailCoordinatorDelegate
+extension BookDetailCoordinator: BookDetailCoordinatorDelegate {
+    func didFinish() {
+        parentCoordinator?.didFinish(coordinator: self)
+    }
 }

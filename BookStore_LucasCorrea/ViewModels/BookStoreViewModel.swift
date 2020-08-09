@@ -34,9 +34,9 @@ class BookStoreViewModel {
     //
     // MARK: - Public Functions
     
-    /// Station list
+    /// BookStore list
     /// - Parameters:
-    ///   - success: Closure Void
+    ///   - success: Closure IndexPaths
     ///   - failure: Closure Errors
     func bookStoreList(search: String, maxResults: String, startIndex: String, success: @escaping SuccessBookStoreHandler, failure: @escaping FailureHandler) {
         self.service.bookList(search: search, maxResults: maxResults, startIndex: startIndex) { result in
@@ -59,6 +59,8 @@ class BookStoreViewModel {
         }
     }
     
+    /// Show detail of a book
+    /// - Parameter book: Book
     func showDetail(of book: Book) {
         let bookDetail = BookDetailViewModel()
         bookDetail.book = book

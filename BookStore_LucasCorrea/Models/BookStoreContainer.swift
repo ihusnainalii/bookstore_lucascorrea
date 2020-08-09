@@ -6,8 +6,6 @@
 //  Copyright © 2020 SiriusCode. All rights reserved.
 //
 
-// BookStoreContainer.swift
-
 import Foundation
 
 struct BookStoreContainer: Decodable {

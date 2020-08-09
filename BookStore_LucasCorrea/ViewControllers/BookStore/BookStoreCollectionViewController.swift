@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "BookCollectionViewCell"
-
 class BookStoreCollectionViewController: UICollectionViewController {
     
     //
@@ -36,7 +34,6 @@ class BookStoreCollectionViewController: UICollectionViewController {
     
     //
     // MARK: - Life cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,8 +45,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
         loadBooks(withSearch: Config.query, currentPage: currentPage)
     }
     
-    // MARK: - Private methods
-    
+    // MARK: - Private Functions
     private func favoriteButton() {
         let button = UIButton()
         button.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
@@ -99,7 +95,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
     private func bookLayoutSection(isWide: Bool) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 2, bottom: 2, trailing: 2)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         let groupHeight = NSCollectionLayoutDimension.fractionalWidth(isWide ? 0.25 : 0.5)
         
@@ -113,11 +109,9 @@ class BookStoreCollectionViewController: UICollectionViewController {
     
     
     // MARK: - UICollectionViewDataSource
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.bookItems.count
@@ -134,14 +128,13 @@ class BookStoreCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - UICollectionViewDelegate
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let book = viewModel.bookItems[indexPath.row]
         viewModel.showDetail(of: book)
     }
 }
 
-
+// MARK: - UICollectionViewDataSourcePrefetching
 extension BookStoreCollectionViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
