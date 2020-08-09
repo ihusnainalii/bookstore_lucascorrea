@@ -22,6 +22,7 @@ class AppCoordinator: BaseCoordinator {
     ///   - window: UIWindow
     ///   - navigationController: UINavigationController
     init(window: UIWindow, navigationController: UINavigationController = UINavigationController()) {
+        navigationController.navigationBar.isTranslucent = false
         super.init(navigationController: navigationController)
         self.window = window
     }

@@ -48,6 +48,14 @@ class BookDetailViewModel {
         let bookStore = CoreDataManager.shared.add(BookStore.self)
         bookStore?.id = book.id
         bookStore?.title = book.title
+        bookStore?.subtitle = book.subtitle
+        bookStore?.authors = book.authors.joined(separator: ", ")
+        bookStore?.descriptionBook = book.description
+        bookStore?.thumbnail = book.thumbnail
+        bookStore?.saleability = book.saleability.rawValue
+        bookStore?.price = book.price ?? 0
+        bookStore?.currencyCode = book.currencyCode
+        bookStore?.buyLink = book.buyLink
         CoreDataManager.shared.save()
     }
     

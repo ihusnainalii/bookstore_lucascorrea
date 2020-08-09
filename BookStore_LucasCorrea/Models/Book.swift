@@ -11,9 +11,11 @@ import Foundation
 enum SaleAbilityStatus: String, Decodable {
     case forSale = "FOR_SALE"
     case notForSale = "NOT_FOR_SALE"
+    case free = "FREE"
 }
 
 struct Book: Decodable {
+    
     let id: String
     let title: String
     let subtitle: String
@@ -40,6 +42,19 @@ struct Book: Decodable {
         case price = "amount"
         case currencyCode
         case buyLink
+    }
+    
+    init(id: String, title: String, subtitle: String, authors: [String], description: String, thumbnail: String, saleability: SaleAbilityStatus, price: Double?, currencyCode: String?, buyLink: String?) {
+        self.id = id
+        self.title = title
+        self.subtitle = subtitle
+        self.authors = authors
+        self.description = description
+        self.thumbnail = thumbnail
+        self.saleability = saleability
+        self.price = price
+        self.currencyCode = currencyCode
+        self.buyLink = buyLink
     }
     
     init(from decoder: Decoder) throws {

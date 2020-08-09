@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BookStore" representedClassName="BookStore" syncable="YES" codeGenerationType="class">
+        <attribute name="authors" attributeType="String"/>
+        <attribute name="buyLink" optional="YES" attributeType="String"/>
+        <attribute name="currencyCode" optional="YES" attributeType="String"/>
+        <attribute name="descriptionBook" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="saleability" attributeType="String"/>
+        <attribute name="subtitle" attributeType="String"/>
+        <attribute name="thumbnail" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
     </entity>
     <elements>
-        <element name="BookStore" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="BookStore" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

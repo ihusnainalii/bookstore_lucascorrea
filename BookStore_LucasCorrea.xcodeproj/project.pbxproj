@@ -62,7 +62,7 @@
 		A00B812D24DEFECB006D577B /* BookStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookStore.xcdatamodel; sourceTree = "<group>"; };
 		A00B813B24DF04EA006D577B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A00B814224E03FC1006D577B /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
-		A0181D9024DCDBBF007E0DEF /* BookStore_LucasCorrea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_LucasCorrea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0181D9024DCDBBF007E0DEF /* BookStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0181DA124DCDBC5007E0DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0181DA624DCDBC6007E0DEF /* BookStore_LucasCorreaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_LucasCorreaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0181DAA24DCDBC6007E0DEF /* BookStore_LucasCorreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_LucasCorreaTests.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		A0181D9124DCDBBF007E0DEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0181D9024DCDBBF007E0DEF /* BookStore_LucasCorrea.app */,
+				A0181D9024DCDBBF007E0DEF /* BookStore.app */,
 				A0181DA624DCDBC6007E0DEF /* BookStore_LucasCorreaTests.xctest */,
 			);
 			name = Products;
@@ -379,7 +379,7 @@
 			);
 			name = BookStore_LucasCorrea;
 			productName = BookStore_LucasCorrea;
-			productReference = A0181D9024DCDBBF007E0DEF /* BookStore_LucasCorrea.app */;
+			productReference = A0181D9024DCDBBF007E0DEF /* BookStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A0181DA524DCDBC6007E0DEF /* BookStore_LucasCorreaTests */ = {
@@ -662,7 +662,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.siriuscode.BookStore-LucasCorrea";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BookStore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -680,7 +680,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.siriuscode.BookStore-LucasCorrea";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BookStore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

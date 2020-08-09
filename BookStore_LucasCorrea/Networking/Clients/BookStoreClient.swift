@@ -35,6 +35,8 @@ struct BookStoreClient: NetworkClient, NetworkClientCancelling {
             return completion(.failure(.invalidURL))
         }
         
+//        print(url)
+        
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: Config.timeout)
         urlRequest.httpMethod = router.method
         
@@ -57,6 +59,7 @@ struct BookStoreClient: NetworkClient, NetworkClientCancelling {
                         let object = try JSONDecoder().decode(returnType, from: data)
                         completion(.success(object))
                     } catch {
+//                        print(error)
                         completion(.failure(.decodingError(message: error.localizedDescription)))
                     }
                 } else {

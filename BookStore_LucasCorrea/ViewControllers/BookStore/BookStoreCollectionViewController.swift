@@ -46,6 +46,15 @@ class BookStoreCollectionViewController: UICollectionViewController {
         loadBooks(withSearch: Config.query, currentPage: currentPage)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if favoriteButton.isSelected {
+            viewModel.loadBooksFavoriteList()
+            self.collectionView.reloadData()
+        }
+    }
+    
     // MARK: - Private Functions
     private func createFavoriteButton() {
         favoriteButton.addTarget(self, action: #selector(self.favoriteAction(sender:)), for: .touchUpInside)
@@ -62,6 +71,7 @@ class BookStoreCollectionViewController: UICollectionViewController {
         viewModel.filterBook(favorite: sender.isSelected) { [weak self] in
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
+                self?.collectionView.setContentOffset(.zero, animated: false)
             }
         }
     }
